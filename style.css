@@ -1,0 +1,62 @@
+#cm {
+    background: gray;
+    position: absolute;
+    padding: 10px;
+    overflow: hidden;
+}
+.ff {
+    position: relative;
+}
+.ff:hover,
+.fs:hover {
+	background: rgba(47, 47, 47, 0.5);
+	cursor: pointer;
+}
+.has:after {
+    content: '';
+	position: absolute;
+	top: 23%;
+	left: calc(100% - -2px);
+	border-style: solid;
+	border-width: 5px;
+	border-color: rgba(255, 255, 255, 0) rgba(255, 0, 0, 0) rgba(255, 0, 0, 0) black;
+}
+.second {
+    background: indianred;
+	z-index: 2;
+	display: none;
+}
+.third {
+	background: pink;
+	z-index: 3;
+	display: none;
+}
+.for_second,
+.for_third {
+    background: indianred;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: calc(100% - 20px);
+    overflow-y: auto;
+    padding-left: 10px;
+}
+.cm_back {
+	height: 100%;
+	width: 10px;
+	background: #2c2c2c;
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	cursor: pointer;
+}
+.cm_back:after {
+	content: '';
+	position: absolute;
+	top: 45%;
+	left: -3px;
+	border-style: solid;
+	border-width: 5px;
+	border-color: rgba(255, 255, 255, 0) white rgba(255, 0, 0, 0) rgba(255, 0, 0, 0);
+}

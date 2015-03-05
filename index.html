@@ -1,0 +1,90 @@
+<!doctype HTML>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="style.css"></link>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+$(document).ready(function () {
+    var cm = $('#cm');
+    var fs = $('.for_second');
+    var ft = $('.for_third');
+    cm.hide();
+    $('#go').click(function () {
+        cm.show();
+    });
+    $('.ff').click(function () {
+        if ($(this).hasClass('has')) {
+            fs.html('');
+            $(this).find('.fs').clone().appendTo('.for_second');
+            fs.animate({left: 10});
+        }
+    });
+	$('.fs').click(function () {
+        if ($(this).hasClass('has')) {
+            ft.html('');
+            $('.fs').find('.ft').clone().appendTo('.for_third');
+            ft.animate({left: 10});
+        }
+    });
+	
+	$('.cm_back').click(function(){
+		if(fs.length >= 0 && ft.length <= 0){
+			fs.animate({left: 100+'%'});
+		}
+		if(ft.length >= 0){
+			ft.animate({left: 100+'%'});
+		}
+		
+	});
+    
+
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="go">Íß!</div>
+<div id="cm">
+    <div class="for_first">
+        <div class="ff">one line</div>
+        <div class="ff has">
+            <p>first line go</p>
+            <div class="second">
+                <div class="fs">line 1</div>
+                <div class="fs">line 1</div>
+                <div class="fs">line 1</div>
+                <div class="fs">line 1</div>
+                <div class="fs has">
+					<p>second line go</p>
+					<div class="third">
+						<div class="ft">line 1</div>
+						<div class="ft">line 1</div>
+						<div class="ft">line 1</div>
+						<div class="ft">line 1</div>
+						<div class="ft">line 1</div>
+						<div class="ft">line 1</div>
+					</div>
+				</div>
+                <div class="fs">line 1</div>
+            </div>
+        </div>
+        <div class="ff has">
+            <p>second line go</p>
+            <div class="second">
+                <div class="fs">line 2</div>
+                <div class="fs">line 2</div>
+                <div class="fs">line 2</div>
+            </div>
+        </div>
+        <div class="ff">second line</div>
+    </div>
+    <div class="for_second"></div>
+    <div class="for_third"></div>
+	<div class="cm_back"></div>
+</div>
+
+</body>
+</html>
